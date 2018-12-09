@@ -1,1 +1,1 @@
-# Scrip
+# Record daily use of shell scripts, bat batches, and Dockerfiles.
