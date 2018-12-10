@@ -1,0 +1,1 @@
+This repository uses Unix-style end of life sequences, and Windows scripts may need to be modified to run correctly.
