@@ -1,0 +1,1 @@
+docker stop $(docker ps | grep "hadoop*" | awk '{print $1}')
