@@ -9,7 +9,7 @@ First, make sure you have Docker installed on your machine. The version number I
 Run with the following command:
 
 ``` shell
-curl -fsSL ${https://github.com/CodingFanlt/Scrip/blob/master/docker/hadoop/hadoop-2.9.2/start.sh} | sh
+curl -O https://raw.githubusercontent.com/CodingFanlt/Scrip/master/docker/hadoop/hadoop-2.9.2/start.sh && chmod +x start.sh && ./start.sh
 ```
 
 You may need to use Root when creating a container.
@@ -51,3 +51,5 @@ If you need to change the relevant configuration file, please rebuild after chan
 ``` shell
 docker builder -t your_image_name .
 ```
+
+中文页面：[使用 Docker 搭建 Hadoop 集群](https://blog.codingfanlt.xyz/2018/12/08/%E4%BD%BF%E7%94%A8-Docker-%E6%90%AD%E5%BB%BA-Hadoop-%E9%9B%86%E7%BE%A4/#more)

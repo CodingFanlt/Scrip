@@ -15,7 +15,7 @@ docker run -itd \
                 -p 8088:8088 \
                 --name hadoop-master \
                 --hostname hadoop-master \
-                codingfanlt/hadoop:2.9.2 &> /dev/null
+                codingfanlt/hadoop:2.9.2
 
 # start hadoop slave container
 i=1
@@ -28,7 +28,7 @@ do
 	                --net=hadoop \
 	                --name hadoop-slave$i \
 	                --hostname hadoop-slave$i \
-	                codingfanlt/hadoop:2.9.2 &> /dev/null
+	                codingfanlt/hadoop:2.9.2
 	i=$(( $i + 1 ))
 done 
 
