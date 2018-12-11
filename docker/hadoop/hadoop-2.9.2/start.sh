@@ -4,7 +4,7 @@
 N=${1:-2} # take effect when the variable is an empty string
 
 # create hadoop network
-docker network create --driver=bridge hadoop
+docker network create --driver=bridge hadoop &> /dev/null
 
 # start hadoop master container
 docker rm -f hadoop-master &> /dev/null
