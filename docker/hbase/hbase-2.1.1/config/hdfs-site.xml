@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- set namenode storage path-->
+    <!-- storage node info -->
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///root/hdfs/namenode</value>
+        <description>NameNode directory for namespace and transaction logs storage.</description>
+    </property>
+    <!-- set datanode storage path-->
+    <!-- storage data -->
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///root/hdfs/datanode</value>
+        <description>DataNode directory</description>
+    </property>
+    <!-- set the number of copies, default 3, reset to 2 -->
+    <property>
+        <name>dfs.replication</name>
+        <value>2</value>
+    </property>
+</configuration>

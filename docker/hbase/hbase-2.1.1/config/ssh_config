@@ -1,0 +1,13 @@
+Host localhost
+  # automatically accept the public key the first time you connect
+  StrictHostKeyChecking no
+
+Host 0.0.0.0
+  # automatically accept the public key the first time you connect
+  StrictHostKeyChecking no
+
+Host hadoop-*
+  # automatically accept the public key the first time you connect
+  StrictHostKeyChecking no
+  # the location where know_hosts is stored. Generally, you don't need to configure this item separately. When StrictHostKeyChecking is set to 'no', it can be set to /dev/null.
+  UserKnownHostsFile=/dev/null

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- Ancillary services running on the NodeManager. You need to configure "mapreduce_shuffle" to run the MapReduce program. -->
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <!-- The class corresponding to the auxiliary service in the NodeManager. -->
+    <!-- <property>
+        <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property> -->
+    <!-- Configuration name node -->
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>hadoop-master</value>
+    </property>
+</configuration>
