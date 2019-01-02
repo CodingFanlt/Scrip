@@ -20,6 +20,4 @@ RUN mv /tmp/hbase-env.sh /usr/local/hbase/conf/hbase-env.sh \
 RUN chmod +x ~/start-hbase.sh \
     && chmod +x $HBASE_HOME/bin/start-hbase.sh
 
-EXPOSE 22 8088 50070 16000 16010 2888 3888 2181
-
 CMD [ "sh", "-c", "service ssh start; bash"]

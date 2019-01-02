@@ -13,12 +13,12 @@ docker run -itd \
                 --net=hadoop \
                 -p 50070:50070 \
                 -p 8088:8088 \
-		-p 16000:16000 \
-		-p 16010:16010 \
-		-p 16030:16030 \
+				-p 16000:16000 \
+				-p 16010:16010 \
+				-p 16030:16030 \
                 --name hadoop-master \
                 --hostname hadoop-master \
-                codingfanlt/hadoop-hbase:2.9.2
+                codingfanlt/hadoop-hbase:1.4.9
 
 # start hadoop slave container
 i=1
@@ -31,7 +31,7 @@ do
 	                --net=hadoop \
 	                --name hadoop-slave$i \
 	                --hostname hadoop-slave$i \
-	                codingfanlt/hadoop-hbase:2.9.2
+	                codingfanlt/hadoop-hbase:1.4.9
 	i=$(( $i + 1 ))
 done 
 
