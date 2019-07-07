@@ -1,6 +1,8 @@
 FROM codingfanlt/hadoop:2.9.2
 
-MAINTAINER CodingFanlt <CodingFanlt@Gmail.com>
+LABEL author="CodingFanlt"
+LABEL maintainer="CodingFanlt@Gmail.com"
+LABEL version="1.0"
 
 RUN wget http://mirrors.tuna.tsinghua.edu.cn/apache/hbase/1.4.9/hbase-1.4.9-bin.tar.gz \
     && tar -xzvf hbase-1.4.9-bin.tar.gz \

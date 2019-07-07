@@ -1,6 +1,8 @@
 FROM codingfanlt/ubuntu-ustc-source:16.04
 
-MAINTAINER CodingFanlt <CodingFanlt@Gmail.com>
+LABEL author="CodingFanlt"
+LABEL maintainer="CodingFanlt@Gmail.com"
+LABEL version="1.0"
 
 WORKDIR /root
 
