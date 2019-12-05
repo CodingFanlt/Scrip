@@ -20,5 +20,5 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
     && echo '## Not recommended' >> /etc/apt/sources.list \
     && echo '# deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse' >> /etc/apt/sources.list \
     && echo '# deb-src http://mirrors.ustc.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse' >> /etc/apt/sources.list \
-    && apt clean
+    && apt-get clean
 CMD ["/bin/bash"]
