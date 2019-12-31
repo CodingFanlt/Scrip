@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # export LC_ALL=en_US.UTF-8
 
 # GOPATH
-export GOPATH=$HOME/Develop/Go
+# export GOPATH=$HOME/Develop/Go
 export GOPROXY=https://goproxy.cn,https://goproxy.io,direct
 
 ## MyPath
