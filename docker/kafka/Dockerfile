@@ -1,12 +1,10 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jre-slim
 
-ENV KAFKA_CONF_DIR=/KAFKA_CONF_DIR \
+ENV KAFKA_CONF_DIR=/conf \
     KAFKA_DATA_DIR=/data \
     KAFKA_DATA_LOG_DIR=/datalog 
 
 ARG DISTRO_NAME=kafka_2.11-2.4.0
-
-WORKDIR $DISTRO_NAME
 
 # Add a user with an explicit UID/GID and create necessary directories
 RUN set -eux; \
@@ -19,7 +17,8 @@ RUN set -eux; \
     apk add --no-cache wget; \
     wget http://apache.claz.org/kafka/2.4.0/kafka_2.11-2.4.0.tgz; \
     tar -xzf "$DISTRO_NAME.tgz"; \
-    mv "$DISTRO_NAME/conf/"* "$KAFKA_CONF_DIR";
+    mv "$DISTRO_NAME/config/"* "$KAFKA_CONF_DIR"; \
+    rm "$DISTRO_NAME.tgz"
     # chown -R kafka:kafka "/$DISTRO_NAME"
 
 VOLUME ["$KAFKA_DATA_DIR", "$KAFKA_DATA_LOG_DIR"]
