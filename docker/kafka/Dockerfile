@@ -10,17 +10,17 @@ WORKDIR $DISTRO_NAME
 
 # Add a user with an explicit UID/GID and create necessary directories
 RUN set -eux; \
-    groupadd -r kafka --gid=1000; \
-    useradd -r -g kafka --uid=1000 kafka; \
-    && mkdir -p "$KAFKA_CONF_DIR" "KAFKA_DATA_DIR" "KAFKA_DATA_LOG_DIR"; \
-    && chown kafka:kafka "$KAFKA_CONF_DIR" "KAFKA_DATA_DIR" "KAFKA_DATA_LOG_DIR"
+    # addgroup -S kafka --g 1000; \
+    # useradd -r -g kafka --uid=1000 kafka; \
+    mkdir -p "$KAFKA_CONF_DIR" "$KAFKA_DATA_DIR" "$KAFKA_DATA_LOG_DIR";
+    # chown kafka:kafka "$KAFKA_CONF_DIR" "$KAFKA_DATA_DIR" "$KAFKA_DATA_LOG_DIR"
 
 RUN set -eux; \
-    && apk add --no-cache bash curl; \
-    && curl http://apache.claz.org/kafka/2.4.0/kafka_2.11-2.4.0.tgz; \
-    && tar -xzf "$DISTRO_NAME.tar.gz"; \
-    && mv "$DISTRO_NAME/conf/"* "$KAFKA_CONF_DIR"; \
-    && chown -R kafka:kafka "/$DISTRO_NAME"
+    apk add --no-cache wget; \
+    wget http://apache.claz.org/kafka/2.4.0/kafka_2.11-2.4.0.tgz; \
+    tar -xzf "$DISTRO_NAME.tgz"; \
+    mv "$DISTRO_NAME/conf/"* "$KAFKA_CONF_DIR";
+    # chown -R kafka:kafka "/$DISTRO_NAME"
 
 VOLUME ["$KAFKA_DATA_DIR", "$KAFKA_DATA_LOG_DIR"]
 
