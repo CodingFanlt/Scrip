@@ -14,9 +14,19 @@ services:
   kafka1:
     image: codingfanlt/kafka
     restart: always
-    hostname: localhost
+    hostname: kafka
     ports:
       - 9092:9092
     environment:
       BROKER_ID: 0
       ZOO_SERVERS: zoo1:2181
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    restart: always
+    ports: 
+      - 9000:9000
+    environment: 
+      KAFKA_BROKERCONNECT: localhost:9092
+      SERVER_SERVLET_CONTEXTPATH: "/"
+      
